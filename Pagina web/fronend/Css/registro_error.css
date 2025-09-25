@@ -1,0 +1,95 @@
+/* Contenedor del error */
+.form-container {
+    background-color: rgba(15, 14, 13, 0.95);
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    margin: 100px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(249, 181, 25, 0.1);
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.form-header h2 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    color: #7f7676;
+    font-size: 15px;
+}
+
+.icono-error {
+    font-size: 48px;
+    color: #d82c2c;
+    margin-bottom: 20px;
+}
+
+/* Botones */
+.btn-field {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.btn-volver {
+    background-color: #ffd500;
+    color: #000;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-volver:hover {
+    background-color: #e6c200;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(255, 213, 0, 0.3);
+}
+
+#signIn {
+    background: linear-gradient(135deg, #d82c2c, #a02020);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#signIn:hover {
+    background: linear-gradient(135deg, #a02020, #d82c2c);
+    box-shadow: 0 5px 15px rgba(216, 44, 44, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

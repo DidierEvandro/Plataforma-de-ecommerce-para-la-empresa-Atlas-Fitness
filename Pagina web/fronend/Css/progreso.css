@@ -1,0 +1,446 @@
+/* VARIABLES DE COLOR */
+:root {
+  --primary-color: #ffd700;
+  --secondary-color: #d82c2c;
+  --dark-bg: #0f0e0d;
+  --darker-bg: #080808;
+  --light-text: #ffffff;
+  --dark-text: #333333;
+  --gray-text: #7f7676;
+  --form-bg: #1a1a1a;
+  --form-border: #333;
+  --form-focus: rgba(255, 215, 0, 0.3);
+  --card-bg: #1e1e1e;
+  --positive-change: #4CAF50;
+  --negative-change: #F44336;
+}
+
+/* ESTILOS GENERALES */
+body {
+  background-color: var(--darker-bg);
+  color: var(--light-text);
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.main-content {
+  flex: 1;
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-title {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+  margin: 20px 0;
+}
+
+/* GRID DE PROGRESO */
+.progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.progress-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--form-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.progress-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+}
+
+/* TARJETA DE RESUMEN */
+.summary-stats {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--gray-text);
+}
+
+.progress-message {
+  background-color: rgba(255, 215, 0, 0.1);
+  border-left: 4px solid var(--primary-color);
+  padding: 10px 15px;
+  border-radius: 0 4px 4px 0;
+}
+
+/* GRÁFICO */
+.chart-container {
+  position: relative;
+  height: 250px;
+  width: 100%;
+}
+
+/* TABLA DE MEDIDAS */
+.measures-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.measures-table th, .measures-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--form-border);
+}
+
+.measures-table th {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.measures-table tr:last-child td {
+  border-bottom: none;
+}
+
+.positive {
+  color: var(--positive-change);
+  font-weight: 500;
+}
+
+.negative {
+  color: var(--negative-change);
+  font-weight: 500;
+}
+
+/* RUTINAS */
+.routine-item {
+  margin-bottom: 15px;
+}
+
+.routine-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.routine-name {
+  font-weight: 500;
+}
+
+.routine-count {
+  color: var(--gray-text);
+  font-size: 0.9rem;
+}
+
+.progress-bar {
+  height: 6px;
+  background-color: var(--form-border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 3px;
+}
+
+/* OBJETIVOS */
+.goals-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.goal-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--form-border);
+}
+
+.goal-item:last-child {
+  border-bottom: none;
+}
+
+.goal-item i {
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+.goal-item.completed {
+  color: var(--positive-change);
+}
+
+.goal-item.completed i {
+  color: var(--positive-change);
+}
+
+.goal-item.in-progress {
+  color: var(--primary-color);
+}
+
+.goal-item.in-progress i {
+  color: var(--primary-color);
+}
+
+/* FORMULARIO DE REGISTRO */
+.progress-form .form-group {
+  margin-bottom: 15px;
+}
+
+.progress-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--gray-text);
+}
+
+.progress-form .form-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--form-border);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--light-text);
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.progress-form .form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--form-focus);
+}
+
+.progress-form .form-actions {
+  margin-top: 25px;
+}
+
+/* BOTONES */
+.primary-btn {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--dark-text);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  box-shadow: 0 4px 15px rgba(216, 44, 44, 0.3);
+  width: 100%;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(216, 44, 44, 0.4);
+}
+
+/* NOTIFICACIONES */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  transform: translateX(150%);
+  transition: transform 0.3s ease;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.notification.show {
+  transform: translateX(0);
+}
+
+.notification.success {
+  background-color: var(--positive-change);
+}
+
+.notification.error {
+  background-color: var(--negative-change);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .progress-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .summary-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .progress-card {
+    padding: 20px 15px;
+  }
+}
+/* Estilos para el calendario de asistencias */
+.attendance-card {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.attendance-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.month-title {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  color: #FFD700;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+.attendance-calendar {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.attendance-calendar th {
+  text-align: center;
+  padding: 8px;
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+}
+
+.attendance-calendar td {
+  text-align: center;
+  padding: 8px;
+  height: 30px;
+  border: 1px solid #eee;
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.attendance-calendar td.today {
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+.attendance-calendar td.attended {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.attendance-calendar td.attended::after {
+  content: '✓';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 0.7rem;
+}
+
+.attendance-calendar td.missed {
+  color: #F44336;
+  font-weight: bold;
+}
+
+.attendance-calendar td.missed::after {
+  content: '✗';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 0.7rem;
+}
+
+.attendance-summary {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.summary-item .value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #FFD700;
+}
+
+.summary-item .label {
+  font-size: 0.8rem;
+  color: #666;
+}

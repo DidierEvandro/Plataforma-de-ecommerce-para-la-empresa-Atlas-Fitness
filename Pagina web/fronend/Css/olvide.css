@@ -1,0 +1,273 @@
+/* Contenedor principal del formulario */
+.contenedor-recuperacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+    padding: 40px 20px;
+}
+
+/* Estilos del formulario */
+.formulario-recuperacion {
+    background: rgba(15, 14, 13, 0.9);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(216, 44, 44, 0.3);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    border: 1px solid #ffd5002e;
+}
+
+.formulario-recuperacion h1 {
+    color: #ffd500;
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-shadow: 0 0 10px rgba(216, 44, 44, 0.5);
+}
+        /* Estilos adicionales para asegurar la visibilidad */
+ .mensaje-exito {
+     text-align: center;
+     padding: 20px;
+ }
+ 
+ .mensaje-exito svg {
+     margin-bottom: 20px;
+ }
+ 
+ .mensaje-exito p {
+     margin: 10px 0;
+     color: #ffffff;
+ }
+ 
+ #mensajeExito {
+     display: none;
+ }
+.formulario-recuperacion p {
+    margin-bottom: 30px;
+    color: #7f7676;
+    line-height: 1.5;
+}
+
+.campo-formulario {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.campo-formulario label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffd500;
+}
+
+.campo-formulario input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: all 0.3s;
+}
+.campo-formulario input:focus {
+    outline: none;
+    border-color: #d82c2c;
+    box-shadow: 0 0 10px rgba(216, 44, 44, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.boton-enviar {
+    background: linear-gradient(to right, #d82c2c, #a02020);
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+.boton-enviar:hover {
+    background: linear-gradient(to right, #a02020, #d82c2c);
+    box-shadow: 0 0 15px rgba(216, 44, 44, 0.6);
+    transform: translateY(-2px);
+}
+
+.enlaces-extra {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #ffd5001a;
+}
+
+.enlaces-extra a {
+    display: block;
+    margin: 15px 0;
+    color: #ffd500 !important;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.enlaces-extra a:hover {
+    color: #ffffff !important;
+    text-decoration: underline;
+    text-shadow: 0 0 8px #ffd500;
+}
+/* Corrección para el enlace de enviar */
+.boton-enviar {
+    /* Mantener visible siempre */
+    opacity: 1 !important;
+    animation: none !important;
+    
+    /* Estilos base */
+    background: linear-gradient(to right, #d82c2c, #a02020);
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animación al hacer hover */
+.boton-enviar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.6s;
+}
+
+.boton-enviar:hover {
+    background: linear-gradient(to right, #a02020, #d82c2c);
+    box-shadow: 0 0 15px rgba(216, 44, 44, 0.6);
+    transform: translateY(-2px);
+}
+
+.boton-enviar:hover::before {
+    left: 100%;
+}
+
+/* Efecto de pulso al hacer hover */
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 rgba(216, 44, 44, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(216, 44, 44, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(216, 44, 44, 0); }
+}
+
+.boton-enviar:hover {
+    animation: pulse-glow 1.5s infinite;
+}
+
+/* Asegurar que el texto del botón siempre sea visible */
+.boton-enviar span {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Efectos responsivos */
+@media (max-width: 768px) {
+    .formulario-recuperacion {
+        padding: 30px 20px;
+    }
+    
+    nav ul li {
+        margin: 0 10px;
+    }
+    
+    .footer_container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-section {
+        margin-bottom: 25px;
+    }
+}
+/* ===== ANIMACIONES ===== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Animación para el contenedor principal */
+.contenedor-recuperacion {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Animación para el formulario */
+.formulario-recuperacion {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.3s forwards;
+}
+
+/* Animación para los elementos del formulario */
+.formulario-recuperacion h1 {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out 0.5s forwards;
+}
+
+.formulario-recuperacion p {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out 0.7s forwards;
+}
+
+.campo-formulario {
+    opacity: 0;
+}
+
+/* Animación escalonada para los campos */
+.campo-formulario:nth-child(1) { animation: fadeInUp 0.6s ease-out 0.9s forwards; }
+.campo-formulario:nth-child(2) { animation: fadeInUp 0.6s ease-out 1.1s forwards; }
+
+.boton-enviar {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out 1.3s forwards;
+}
+
+.enlaces-extra {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out 1.5s forwards;
+}
+
+/* Animación para el botón */
+.boton-enviar:hover {
+    animation: pulse 1s infinite;
+}
+
+/* Animación para el footer */

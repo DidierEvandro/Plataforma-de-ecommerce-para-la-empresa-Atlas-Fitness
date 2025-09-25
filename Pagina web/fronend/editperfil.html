@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil - AresFitness</title>
+  <link rel="stylesheet" href="Css/editperfil.css"><!--enlazado con css editperfil-->
+  <link rel="icon" href="Imagenes/usuario.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header mejorado -->
+  <header>
+    <div class="logo-container"><a href="Index.html">
+        <img src="Imagenes/logo.png" alt="Logo AresFitness"></a>
+    </div>
+    <nav>
+      <ul>
+        <ul>
+          <li><a href="planes.html">PLANES</a></li>
+          <li><a href="ubi.html">UBICACIÓN</a></li>
+          <li><a href="suple.html">SUPLEMENTOS</a></li>
+          <li><a href="ropa.html">ROPA</a></li>
+          <li class="icon-container">
+            <a href="carrito.html">
+              <img src="Imagenes/carrito.jpg" alt="Carrito de compras" id="icono-carrito">
+            </a>
+          </li>
+          <li class="icon-container">
+            <a href="login.html">
+              <img src="Imagenes/usuario.png" alt="Inicio de Sesion" id="icono-inicio-sesion">
+            </a>
+          </li>
+        </ul>
+    </nav>
+  </header>
+  <main class="main-content">
+    <section class="perfil-usuario">
+      <div class="profile-header">
+        <h1 class="profile-title">Editar información</h1>
+        <div class="avatar-container">
+          <img src="Imagenes/david-gif.gif" alt="Avatar del usuario" class="profile-avatar" width="100" height="100">
+          <button class="avatar-edit-btn" aria-label="Cambiar foto de perfil">
+            <i class="fas fa-camera"></i>
+          </button>
+        </div>
+      </div>
+
+      <form class="profile-form" id="profileForm">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <div class="input-container">
+              <input type="text" id="nombre" class="form-input" required disabled>
+              <button type="button" class="edit-btn" aria-label="Editar nombre" disabled
+                style="opacity:0.5; cursor:not-allowed;">
+                <i class="fas fa-ban"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="apellido" class="form-label">Apellido:</label>
+            <div class="input-container">
+              <input type="text" id="apellido" class="form-input" required disabled>
+              <button type="button" class="edit-btn" aria-label="Editar apellido" disabled
+                style="opacity:0.5; cursor:not-allowed;">
+                <i class="fas fa-ban"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="dni" class="form-label">DNI:</label>
+            <div class="input-container">
+              <input type="text" id="dni" class="form-input" pattern="[0-9]{8}" required disabled>
+              <!-- Botón oculto o deshabilitado -->
+              <button type="button" class="edit-btn" aria-label="Editar DNI" disabled
+                style="opacity:0.5; cursor:not-allowed;">
+                <i class="fas fa-ban"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="fecha" class="form-label">Fecha de nacimiento:</label>
+            <div class="input-container">
+              <input type="date" id="fecha" class="form-input" required disabled>
+              <button type="button" class="edit-btn" aria-label="Editar fecha de nacimiento" disabled
+                style="opacity:0.5; cursor:not-allowed;">
+                <i class="fas fa-ban"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="correo" class="form-label">Correo electrónico:</label>
+            <div class="input-container">
+              <input type="email" id="correo" class="form-input" required>
+              <button type="button" class="edit-btn" aria-label="Editar correo">
+                <i class="fas fa-edit"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="clave" class="form-label">Contraseña:</label>
+            <div class="input-container">
+              <input type="password" id="clave" class="form-input" minlength="8" required>
+              <button type="button" class="edit-btn" aria-label="Editar contraseña">
+                <i class="fas fa-edit"></i>
+              </button>
+            </div>
+          </div>
+
+
+          <div class="form-field">
+            <label for="genero" class="form-label">Genero:</label>
+            <div class="input-container">
+              <select id="genero" class="form-input">
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="prefiero-no-decir">Prefiero no decirlo</option>
+              </select>
+              <button type="button" class="edit-btn" aria-label="Editar genero">
+                <i class="fas fa-edit"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="peso" class="form-label">Peso (kg):</label>
+            <div class="input-container">
+              <input type="number" id="peso" class="form-input" step="0.1" min="30" max="300" required>
+              <button type="button" class="edit-btn" aria-label="Editar peso">
+                <i class="fas fa-edit"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="talla" class="form-label">Estatura (cm):</label>
+            <div class="input-container">
+              <input type="number" id="talla" class="form-input" min="100" max="250" required>
+              <button type="button" class="edit-btn" aria-label="Editar estatura">
+                <i class="fas fa-edit"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="telefono" class="form-label">Teléfono:</label>
+            <div class="input-container">
+              <input type="tel" id="telefono" class="form-input" pattern="[0-9]{9}" required>
+              <button type="button" class="edit-btn" aria-label="Editar teléfono">
+                <i class="fas fa-edit"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-field full-width">
+            <label for="objetivos" class="form-label">Mis objetivos:</label>
+            <textarea id="objetivos" class="form-textarea" placeholder="Describe tus objetivos fitness..."></textarea>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <a href="index.html">
+            <button type="button" class="secondary-btn">Cancelar</button></a>
+          <button type="submit" class="primary-btn">Guardar cambios</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+
+
+  <!-- Footer mejorado -->
+  <footer>
+    <div id="LOGO">
+      <div id="logo">
+        <a href="index.html" target="_blank"><img id="logo" src="Imagenes/logo.png" alt="Logo Ares Fitness"><br><br></a>
+
+        <div class="footer_container">
+          <!-- Sección izquierda: Redes y contacto -->
+          <div class="redes-sociales">
+            <strong>Redes Sociales:</strong><br><br>
+            <a href="#" target="_blank"><img src="Imagenes/FB.png" alt="Facebook" class="icono-red"></a>
+            <a href="https://www.instagram.com/aresfitness.peru/" target="_blank"><img src="Imagenes/Insta.png"
+                alt="Instagram" class="icono-red"></a>
+            <a href="#" target="_blank"><img src="Imagenes/Tiktok.png" alt="Tiktok" class="icono-red"></a>
+            <a href="#" target="_blank"><img src="Imagenes/X.png" alt="X" class="icono-red"></a><br>
+            <br><br>
+            <strong>CONTACTANOS:</strong><br><br>
+            <a href="#" target="_blank">
+              <img src="Imagenes/WhatsApp.png" alt="WhatsApp" style="width: 20px; vertical-align: middle;"></a>
+            <br><br>
+            <a href="#" target="_blank">
+              <img src="Imagenes/Gmail.png" alt="Correo" style="width: 20px; vertical-align: middle;"></a>
+
+          </div>
+          <!-- Sección central: Enlaces -->
+          <div class="footer-section">
+            <a href="#">TERMINOS Y CONDICIONES</a><br><br><br>
+            <a href="#">POLITICAS Y PRIVACIDAD</a><br><br><br>
+            <a href="#">QUEJAS Y RECLAMOS</a>
+          </div>
+
+          <!-- Sección derecha: soporte y libro -->
+          <div class="footer-section" style="text-align: center;">
+            <a href="#">SOPORTE TECNICO</a><br><br><br>
+            <a href="Index.html">ARES FITNESS</a><br><br><br><br>
+            <span style="color: #00ccff; font-weight: bold;"></span><br>
+            <img src="Imagenes/LibroR.png" alt="Libro de Reclamaciones" style="width: 150px;">
+          </div>
+        </div>
+        <p>&copy; 2023 AresFitness. Todos los derechos reservados.</p>
+
+  </footer>
+  <script src="JS/editperfil.js"></script><!--enlazado js editperfil-->
+
+</body>
+
+</html>

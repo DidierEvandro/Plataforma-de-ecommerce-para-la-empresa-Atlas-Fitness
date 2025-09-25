@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - AresFitness</title>
+    <link rel="stylesheet" href="Css/login.css">
+    <link rel="stylesheet" href="Css/HyF.css">
+    <link rel="icon" href="Imagenes/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>   
+<body>
+<header>
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="Imagenes/logo.png" alt="Logo AresFitness">
+        </a>
+    </div>
+</header>
+
+<!-- Formulario -->
+<div class="main-wrapper">
+    <div class="container">
+        <div class="form-content">
+            <div class="user-icon">
+                <img src="Imagenes/usuario.png" alt="Icono de usuario" />
+            </div>
+            <h1 id="title">INICIAR SESIÓN</h1>
+            <p class="subtitle">Ingresa tus credenciales para acceder a tu cuenta</p>
+            
+            <!-- FORM sin acción directa al backend -->
+            <form id="loginForm">
+                <div class="input-group">
+                    <div class="input-field" id="nameInput">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" name="email" id="email" placeholder="Correo" required />
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="password" id="password" placeholder="Contraseña" required />
+                        <i class="fa-regular fa-eye-slash toggle-password" id="togglePassword" style="cursor: pointer;"></i>
+                    </div>
+                    <div class="OLVIDE">
+                        <a href="olvide.html">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </div>
+                <button type="submit" class="btn-login">Ingresar</button>
+            </form>
+
+            <!-- Mensaje de error opcional -->
+            <p id="login-error" style="color: red; display: none; margin-top: 10px;"></p>
+        </div>
+    </div>
+</div>
+
+<!-- Pie de página básico -->
+<footer>
+    <p style="text-align: center; color: #888;">&copy; 2025 AresFitness. Todos los derechos reservados.</p>
+</footer>
+
+<!-- JS para alternar visibilidad de contraseña -->
+<script>
+    const togglePassword = document.getElementById("togglePassword");
+    const passwordInput = document.getElementById("password");
+
+    togglePassword.addEventListener("click", () => {
+        const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+        passwordInput.setAttribute("type", type);
+        togglePassword.classList.toggle("fa-eye");
+        togglePassword.classList.toggle("fa-eye-slash");
+    });
+
+    // === LOGIN CON FETCH ===
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        fetch("http://localhost:3000/api/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.usuario && data.usuario.id) {
+                localStorage.setItem("usuario-ares", JSON.stringify(data.usuario));
+                window.location.href = "index.html"; // Redirige al inicio
+            } else {
+                document.getElementById("login-error").textContent = "Correo o contraseña incorrectos";
+                document.getElementById("login-error").style.display = "block";
+            }
+        })
+        .catch(err => {
+            console.error("Error de red:", err);
+            document.getElementById("login-error").textContent = "Error al iniciar sesión. Intenta más tarde.";
+            document.getElementById("login-error").style.display = "block";
+        });
+    });
+</script>
+</body>
+</html>

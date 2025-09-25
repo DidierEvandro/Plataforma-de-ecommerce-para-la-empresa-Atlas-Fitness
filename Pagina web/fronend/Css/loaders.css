@@ -1,0 +1,296 @@
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a1a;
+            font-family: Arial, sans-serif;
+        }
+
+        .loader-container {
+            text-align: center;
+        }
+
+        .loader {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            margin: 0 auto 20px;
+        }
+
+        .bar {
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, #ff4d4d, #ff9966);
+            border-radius: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .weight {
+            position: absolute;
+            width: 30px;
+            height: 15px;
+            background: #333;
+            border-radius: 3px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .left-weight {
+            left: -35px;
+            animation: leftLift 1.5s infinite ease-in-out;
+        }
+
+        .right-weight {
+            right: -35px;
+            animation: rightLift 1.5s infinite ease-in-out;
+        }
+
+        
+
+        @keyframes leftLift {
+            0%, 100% { top: 35%; }
+            50% { top: 65%; }
+        }
+
+        @keyframes rightLift {
+            0%, 100% { top: 65%; }
+            50% { top: 35%; }
+        }
+
+        .loading-text {
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .dots::after {
+            content: '...';
+            animation: dots 1.5s infinite;
+        }
+
+        @keyframes dots {
+            0% { content: '.'; }
+            33% { content: '..'; }
+            66% { content: '...'; }
+        }
+        
+    .runner-loader {
+        width: 150px;
+        height: 50px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+    }
+    .runner {
+        width: 30px;
+        height: 30px;
+        background: url('https://cdn-icons-png.flaticon.com/512/2936/2936886.png') no-repeat center/cover;
+        position: absolute;
+        animation: run 2s infinite linear;
+    }
+    @keyframes run {
+        0% { left: -30px; }
+        100% { left: 150px; }
+    }
+            body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a1a;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .loader-container {
+            text-align: center;
+            position: relative;
+        }
+
+        /* Barra de pesas mejorada */
+        .weight-loader {
+            width: 200px;
+            height: 100px;
+            position: relative;
+            margin: 0 auto 30px;
+        }
+
+        .bar {
+            position: absolute;
+            width: 100%;
+            height: 12px;
+            background: linear-gradient(90deg, #ff4d4d, #f9c74f, #ff9966);
+            border-radius: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 0 15px rgba(255, 153, 102, 0.5);
+        }
+
+        .weight {
+            position: absolute;
+            width: 35px;
+            height: 20px;
+            background: linear-gradient(#333, #555);
+            border-radius: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .left-weight {
+            left: -40px;
+            animation: leftLift 1.8s infinite cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        .right-weight {
+            right: -40px;
+            animation: rightLift 1.8s infinite cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        @keyframes leftLift {
+            0%, 100% { 
+                top: 35%; 
+                transform: translateY(-50%) rotate(-5deg);
+            }
+            50% { 
+                top: 65%; 
+                transform: translateY(-50%) rotate(5deg);
+            }
+        }
+
+        @keyframes rightLift {
+            0%, 100% { 
+                top: 65%; 
+                transform: translateY(-50%) rotate(5deg);
+            }
+            50% { 
+                top: 35%; 
+                transform: translateY(-50%) rotate(-5deg);
+            }
+        }
+
+        /* Corredor mejorado */
+        .runner-track {
+            width: 250px;
+            height: 5px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            margin: 40px auto 0;
+            position: relative;
+            overflow: visible;
+        }
+
+        .runner {
+            width: 40px;
+            height: 40px;
+            background: url('https://cdn-icons-pflaticon.com/512/2936/2936886.png') no-repeat center/contain;
+            position: absolute;
+            top: -20px;
+            animation: run 2s infinite ease-in-out;
+            filter: drop-shadow(0 0 8px rgba(255, 153, 102, 0.7));
+        }
+
+        .runner::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 3px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            animation: shadowPulse 2s infinite ease-in-out;
+        }
+
+        @keyframes run {
+            0% { 
+                left: -40px;
+                transform: scaleX(1);
+            }
+            25% { transform: translateY(-10px) scaleX(1); }
+            50% { transform: translateY(0) scaleX(1); }
+            75% { transform: translateY(-10px) scaleX(1); }
+            100% { 
+                left: 250px;
+                transform: scaleX(1);
+            }
+        }
+
+        @keyframes shadowPulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.3); }
+        }
+
+        /* Texto de carga mejorado */
+        .loading-text {
+            color: #fff;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .dots {
+            display: inline-block;
+            width: 20px;
+            text-align: left;
+        }
+
+        .dots::after {
+            content: '';
+            animation: dots 1.5s infinite steps(4);
+        }
+
+        @keyframes dots {
+            0% { content: ''; }
+            25% { content: '.'; }
+            50% { content: '..'; }
+            75% { content: '...'; }
+        }
+
+        /* Efecto de brillo */
+        .glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: radial-gradient(circle at center, rgba(255, 153, 102, 0.3) 0%, transparent 70%);
+            animation: pulse 3s infinite alternate;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.7; }
+        }
+        
+        
+        
+        .runner-loader {
+        width: 150px;
+        height: 50px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+    }
+    .runner {
+        width: 30px;
+        height: 30px;
+        background: url('https://cdn-icons-png.flaticon.com/512/2936/2936886.png') no-repeat center/cover;
+        position: absolute;
+        animation: run 2s infinite linear;
+    }
+    @keyframes run {
+        0% { left: -30px; }
+        100% { left: 150px; }
+    }

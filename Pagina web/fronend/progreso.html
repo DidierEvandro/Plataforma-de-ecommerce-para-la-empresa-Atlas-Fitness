@@ -1,0 +1,259 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AresFitness - Mi Progreso</title>
+  <link rel="stylesheet" href="Css/progreso.css">
+ <link rel="icon" href="Imagenes/usuario.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="Index.jsp">
+          <img src="Imagenes/logo.png" alt="Logo AresFitness" width="120" height="60">
+        </a>
+      </div>
+      <nav class="main-nav">
+        <button class="mobile-menu-button" aria-expanded="false" aria-controls="primary-navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul id="primary-navigation" class="nav-list" data-visible="false">
+          <li><a href="Ubicacion.jsp" class="nav-link">UBICACIÓN</a></li>
+          <li><a href="Planes.jsp" class="nav-link">PLANES</a></li>
+  
+          <li class="nav-icon">
+            <a href="login.jsp" aria-label="Inicio de sesión">
+              <img src="Imagenes/usuario.png" alt="Inicio de Sesión" width="24" height="24">
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="divider"></div>
+
+  <main class="main-content">
+    <section class="progreso-section">
+      <h1 class="section-title">Mi Progreso Fitness</h1>
+      
+      <div class="progress-grid">
+        <!-- Resumen de progreso -->
+        <div class="progress-card summary-card">
+          <h2 class="card-title">Resumen</h2>
+          <div class="summary-stats">
+            <div class="stat-item">
+              <span class="stat-value">12</span>
+              <span class="stat-label">Semanas</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">-5.2kg</span>
+              <span class="stat-label">Peso</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">+3.5%</span>
+              <span class="stat-label">Músculo</span>
+            </div>
+          </div>
+          <div class="progress-message">
+            <p>¡Buen trabajo! Has completado el 80% de tu objetivo mensual.</p>
+          </div>
+        </div>
+        
+        <!-- Gráfico de progreso -->
+        <div class="progress-card chart-card">
+          <h2 class="card-title">Evolución de Peso</h2>
+          <div class="chart-container">
+            <canvas id="weightChart"></canvas>
+          </div>
+        </div>
+        
+        <!-- Medidas corporales -->
+        <div class="progress-card measures-card">
+          <h2 class="card-title">Medidas Corporales</h2>
+          <table class="measures-table">
+            <thead>
+              <tr>
+                <th>Medida</th>
+                <th>Inicio</th>
+                <th>Actual</th>
+                <th>Diferencia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Peso (kg)</td>
+                <td>78.5</td>
+                <td>73.3</td>
+                <td class="positive">-5.2</td>
+              </tr>
+              <tr>
+                <td>Brazo (cm)</td>
+                <td>32</td>
+                <td>34</td>
+                <td class="positive">+2.0</td>
+              </tr>
+              <tr>
+                <td>Pecho (cm)</td>
+                <td>98</td>
+                <td>102</td>
+                <td class="positive">+4.0</td>
+              </tr>
+              <tr>
+                <td>Cintura (cm)</td>
+                <td>86</td>
+                <td>80</td>
+                <td class="positive">-6.0</td>
+              </tr>
+              <tr>
+                <td>Pierna (cm)</td>
+                <td>54</td>
+                <td>56</td>
+                <td class="positive">+2.0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Rutinas completadas -->
+        <div class="progress-card routines-card">
+          <h2 class="card-title">Rutinas Completadas</h2>
+          <div class="routine-stats">
+            <div class="routine-item">
+              <div class="routine-info">
+                <span class="routine-name">Full Body</span>
+                <span class="routine-count">15 sesiones</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="routine-item">
+              <div class="routine-info">
+                <span class="routine-name">Cardio</span>
+                <span class="routine-count">10 sesiones</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 50%"></div>
+              </div>
+            </div>
+            <div class="routine-item">
+              <div class="routine-info">
+                <span class="routine-name">Pecho/Brazos</span>
+                <span class="routine-count">8 sesiones</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 40%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Objetivos -->
+        <div class="progress-card goals-card">
+          <h2 class="card-title">Mis Objetivos</h2>
+          <ul class="goals-list">
+            <li class="goal-item completed">
+              <i class="fas fa-check-circle"></i>
+              <span>Perder 5kg de grasa</span>
+            </li>
+            <li class="goal-item in-progress">
+              <i class="fas fa-running"></i>
+              <span>Correr 5km sin parar</span>
+            </li>
+            <li class="goal-item">
+              <i class="fas fa-dumbbell"></i>
+              <span>Press banca 80kg</span>
+            </li>
+            <li class="goal-item">
+              <i class="fas fa-utensils"></i>
+              <span>Mantener dieta 30 días</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Registrar nuevo progreso -->
+        <div class="progress-card register-card">
+          <h2 class="card-title">Registrar Progreso</h2>
+          <form class="progress-form" id="progressForm">
+            <div class="form-group">
+              <label for="progressDate">Fecha:</label>
+              <input type="date" id="progressDate" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label for="weight">Peso (kg):</label>
+              <input type="number" id="weight" class="form-input" step="0.1" min="30" max="300" required>
+            </div>
+            <div class="form-group">
+              <label for="bodyFat">% Grasa Corporal:</label>
+              <input type="number" id="bodyFat" class="form-input" step="0.1" min="5" max="50">
+            </div>
+            <div class="form-group">
+              <label for="muscleMass">% Masa Muscular:</label>
+              <input type="number" id="muscleMass" class="form-input" step="0.1" min="20" max="80">
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="primary-btn">Guardar</button>
+            </div>
+          </form>
+        </div>
+        <!-- Dentro de tu sección progress-grid, añade esta tarjeta -->
+<div class="progress-card attendance-card">
+  <h2 class="card-title">Mi Asistencia</h2>
+  <div class="attendance-controls">
+    <button class="nav-button prev-month" onclick="changeMonth(-1)">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <h3 id="monthLabel" class="month-title">JUNIO 2024</h3>
+    <button class="nav-button next-month" onclick="changeMonth(1)">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+  
+  <table class="attendance-calendar" id="calendarTable">
+    <!-- El calendario se generará con JavaScript -->
+  </table>
+  
+  <div class="attendance-summary">
+    <div class="summary-item">
+      <span class="value">8</span>
+      <span class="label">Asistencias</span>
+    </div>
+    <div class="summary-item">
+      <span class="value">7</span>
+      <span class="label">Faltas</span>
+    </div>
+    <div class="summary-item">
+      <span class="value">73%</span>
+      <span class="label">Asistencia</span>
+    </div>
+  </div>
+</div>
+      </div>
+
+    </section>
+  </main>
+
+  <div class="divider"></div>
+
+  <footer class="main-footer">
+
+    <p>&copy; 2025 AresFitness. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Chart.js para gráficos -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="JS/progreso.js"></script>
+  
+  <script>
+
+  </script>
+</body>
+</html>

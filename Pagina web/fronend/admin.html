@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AresFitness - Admin</title>
+  <link rel="stylesheet" href="Css/admin.css">
+  <link rel="icon" href="Imagenes/logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <img src="Imagenes/logo.png" alt="Logo AresFitness" class="admin-logo">
+        <h2>Panel de Admin</h2>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="active">
+            <a href="#dashboard">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#usuarios">
+              <i class="fas fa-users"></i>
+              <span>Usuarios</span>
+              <span class="badge">24</span>
+            </a>
+          </li>
+          <li>
+            <a href="#membresias">
+              <i class="fas fa-id-card"></i>
+              <span>Membresías</span>
+            </a>
+          </li>
+          <li>
+            <a href="#reportes">
+              <i class="fas fa-chart-bar"></i>
+              <span>Reportes</span>
+            </a>
+          </li>
+          <li>
+            <a href="#configuracion">
+              <i class="fas fa-cog"></i>
+              <span>Configuración</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <div class="admin-profile">
+          <img src="Imagenes/image.png" alt="Admin Avatar">
+          <div class="profile-info">
+            <strong>Admin User</strong>
+            <small>Super Admin</small>
+          </div>
+        </div>
+          <a href="index.jsp" class="logout-btn">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Cerrar Sesión</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <header class="admin-header">
+        <div class="header-left">
+          <button class="menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1>Dashboard</h1>
+        </div>
+        
+        <div class="header-right">
+          <div class="search-box">
+            <input type="text" placeholder="Buscar...">
+            <button><i class="fas fa-search"></i></button>
+          </div>
+          <div class="notifications">
+            <button class="notification-btn">
+              <i class="fas fa-bell"></i>
+              <span class="badge danger">5</span>
+            </button>
+          </div>
+        </div>
+      </header>
+      
+      <div class="admin-content">
+        <!-- Estadísticas Rápidas -->
+        <section class="stats-section">
+          <div class="stat-card">
+            <div class="stat-icon primary">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="stat-info">
+              <h3>1,248</h3>
+              <p>Usuarios Registrados</p>
+            </div>
+            <div class="stat-trend">
+              <i class="fas fa-arrow-up"></i>
+              <span>12% este mes</span>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon success">
+              <i class="fas fa-id-card"></i>
+            </div>
+            <div class="stat-info">
+              <h3>856</h3>
+              <p>Membresías Activas</p>
+            </div>
+            <div class="stat-trend">
+              <i class="fas fa-arrow-up"></i>
+              <span>8% este mes</span>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon warning">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <div class="stat-info">
+              <h3>324</h3>
+              <p>Asistencias Hoy</p>
+            </div>
+            <div class="stat-trend">
+              <i class="fas fa-arrow-up"></i>
+              <span>15% este mes</span>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon danger">
+              <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <div class="stat-info">
+              <h3>12</h3>
+              <p>Problemas Pendientes</p>
+            </div>
+            <div class="stat-trend">
+              <i class="fas fa-arrow-down"></i>
+              <span>3% este mes</span>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Tabla de Últimos Usuarios -->
+        <section class="table-section">
+          <div class="section-header">
+            <h3>Últimos Usuarios Registrados</h3>
+            <a href="#usuarios" class="view-all">Ver Todos</a>
+          </div>
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Email</th>
+                  <th>Membresía</th>
+                  <th>Fecha Registro</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#1001</td>
+                  <td>
+                    <div class="user-info">
+                      <img src="Imagenes/image.png" alt="User 1">
+                      <span>Juan Pérez</span>
+                    </div>
+                  </td>
+                  <td>juan.perez@example.com</td>
+                  <td>Premium</td>
+                  <td>15/05/2024</td>
+                  <td><span class="status-badge active">Activo</span></td>
+                  <td>
+                    <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                    <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#1002</td>
+                  <td>
+                    <div class="user-info">
+                      <img src="Imagenes/image.png" alt="User 2">
+                      <span>María Gómez</span>
+                    </div>
+                  </td>
+                  <td>maria.gomez@example.com</td>
+                  <td>Básica</td>
+                  <td>14/05/2024</td>
+                  <td><span class="status-badge active">Activo</span></td>
+                  <td>
+                    <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                    <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#1003</td>
+                  <td>
+                    <div class="user-info">
+                      <img src="Imagenes/image.png" alt="User 3">
+                      <span>Carlos Ruiz</span>
+                    </div>
+                  </td>
+                  <td>carlos.ruiz@example.com</td>
+                  <td>Premium</td>
+                  <td>12/05/2024</td>
+                  <td><span class="status-badge pending">Pendiente</span></td>
+                  <td>
+                    <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                    <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        
+        <!-- Actividad Reciente -->
+        <section class="activity-section">
+          <div class="section-header">
+            <h3>Actividad Reciente</h3>
+          </div>
+          <div class="activity-list">
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fas fa-user-plus"></i>
+              </div>
+              <div class="activity-content">
+                <p><strong>Nuevo usuario registrado</strong> - Juan Pérez se ha registrado</p>
+                <small>Hace 2 horas</small>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fas fa-id-card"></i>
+              </div>
+              <div class="activity-content">
+                <p><strong>Membresía renovada</strong> - María Gómez renovó su membresía</p>
+                <small>Hace 5 horas</small>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fas fa-check-in"></i>
+              </div>
+              <div class="activity-content">
+                <p><strong>Asistencia registrada</strong> - Carlos Ruiz ingresó al gimnasio</p>
+                <small>Hace 1 día</small>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="JS/admin.js"></script>
+</body>
+</html>

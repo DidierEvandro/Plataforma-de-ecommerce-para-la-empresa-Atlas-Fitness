@@ -1,0 +1,157 @@
+
+/* Contenedor principal */
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px);
+    padding: 10px 20px;
+}
+
+/* Contenedor del formulario */
+.container {
+    background: rgba(15, 14, 13, 0.95);
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(179, 52, 52, 0.5);
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid rgba(255, 213, 0, 0.1);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Icono de usuario */
+.user-icon {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.user-icon img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    filter: brightness(0) invert(80%) sepia(29%) saturate(1273%) hue-rotate(3deg) brightness(105%) contrast(106%);
+}
+
+/* Título */
+#title {
+    color: #ffd500;
+    margin-bottom: 10px;
+    font-size: 32px;
+    font-family: 'CodecProExtraBold', sans-serif;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    color: #7f7676;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Campos de entrada */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+.btn-login {
+    width: 100%;
+    padding: 14px 0;
+    background: linear-gradient(135deg, #ffd500, #ff9900);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c2c2c;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(255, 213, 0, 0.3);
+}
+
+.btn-login:hover {
+    background: linear-gradient(135deg, #ff9900, #ffd500);
+    box-shadow: 0 6px 15px rgba(255, 213, 0, 0.5);
+    transform: translateY(-2px);
+}   
+.input-field {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 213, 0, 0.2);
+    transition: all 0.3s;
+}
+
+.input-field:hover {
+    border-color: rgba(255, 213, 0, 0.4);
+}
+
+.input-field i {
+    margin-right: 15px;
+    color: #ffd500;
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+}
+
+.input-field input {
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    width: 100%;
+    font-size: 15px;
+    padding: 5px 0;
+}
+
+.input-field input::placeholder {
+    color: #7f7676;
+    opacity: 0.7;
+}
+
+.input-field input:focus {
+    color: #fff;
+}
+
+.toggle-password {
+    color: #7f7676;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: all 0.3s;
+}
+
+.toggle-password:hover {
+    color: #ffd500;
+}
+
+/* Enlace olvidé contraseña */
+.OLVIDE {
+    text-align: right;
+    margin-top: 5px;
+}
+
+.OLVIDE a {
+    color: #7f7676 !important;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.OLVIDE a:hover {
+    color: #ffd500 !important;
+    text-decoration: underline;
+}
+
+

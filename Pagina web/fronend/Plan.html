@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="Imagenes/logo.png">
+    <link rel="stylesheet" href="Css/HyF.css">
+    <link rel="stylesheet" href="Css/Plan.css">
+    <title>AresFitness - Membresía</title>
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="Imagenes/logo.png" alt="Logo AresFitness" />
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content - Plan Selection Section -->
+    <main>
+        <section id="plan-section" class="contenido">
+            <div class="contenido-planes">
+                <div>
+                    <h1 class="color-titulo">Seleccionar Plan</h1>
+                    <div class="planes-grid">
+                        <!-- Plan Interdiario -->
+                        <div class="contenido-op caja plan-card">
+                            <div class="plan-header">
+                                <input class="plan-checkbox" type="radio" name="plan" id="plan-interdiario" value="interdiario">
+                                <label for="plan-interdiario"><h3>Plan Interdiario</h3></label>
+                            </div>
+                            <div class="plan-body">
+                                <p><i class="fas fa-calendar-alt"></i> Lunes, Miércoles, Viernes</p>
+                                <p><i class="fas fa-clock"></i> Acceso 6:00 am - 10:00 pm</p>
+                                <p><i class="fas fa-dumbbell"></i> Área de máquinas y pesas</p>
+                                <div class="plan-price">
+                                    <h2>S/<span>50</span></h2>
+                                    <small>por mes</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Plan Mensual -->
+                        <div class="contenido-op caja plan-card">
+                            <div class="plan-header">
+                                <input class="plan-checkbox" type="radio" name="plan" id="plan-mensual" value="mensual">
+                                <label for="plan-mensual"><h3>Plan Mensual</h3></label>
+                            </div>
+                            <div class="plan-body">
+                                <p><i class="fas fa-calendar-alt"></i> Acceso ilimitado</p>
+                                <p><i class="fas fa-clock"></i> 6:00 am - 10:00 pm</p>
+                                <p><i class="fas fa-dumbbell"></i> Todas las áreas</p>
+                                <div class="plan-price">
+                                    <h2>S/<span>80</span></h2>
+                                    <small>por mes</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Plan Trimestral -->
+                        <div class="contenido-op caja plan-card highlight-plan">
+                            <div class="plan-badge">RECOMENDADO</div>
+                            <div class="plan-header">
+                                <input class="plan-checkbox" type="radio" name="plan" id="plan-trimestral" value="trimestral" checked>
+                                <label for="plan-trimestral"><h3>Plan Trimestral</h3></label>
+                            </div>
+                            <div class="plan-body">
+                                <p><i class="fas fa-calendar-alt"></i> Acceso ilimitado</p>
+                                <p><i class="fas fa-clock"></i> 6:00 am - 10:00 pm</p>
+                                <p><i class="fas fa-dumbbell"></i> Todas las áreas</p>
+                                <p><i class="fas fa-gift"></i> 1 clase grupal gratis</p>
+                                <div class="plan-price">
+                                    <h2>S/<span>200</span></h2>
+                                    <small>por 3 meses (Ahorra S/40)</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Plan Semestral -->
+                        <div class="contenido-op caja plan-card">
+                            <div class="plan-header">
+                                <input class="plan-checkbox" type="radio" name="plan" id="plan-semestral" value="semestral">
+                                <label for="plan-semestral"><h3>Plan Semestral</h3></label>
+                            </div>
+                            <div class="plan-body">
+                                <p><i class="fas fa-calendar-alt"></i> Acceso ilimitado</p>
+                                <p><i class="fas fa-clock"></i> 6:00 am - 10:00 pm</p>
+                                <p><i class="fas fa-dumbbell"></i> Todas las áreas</p>
+                                <p><i class="fas fa-gift"></i> 2 clases grupales gratis</p>
+                                <div class="plan-price">
+                                    <h2>S/<span>400</span></h2>
+                                    <small>por 6 meses (Ahorra S/80)</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Plan Anual -->
+                        <div class="contenido-op caja plan-card">
+                            <div class="plan-header">
+                                <input class="plan-checkbox" type="radio" name="plan" id="plan-anual" value="anual">
+                                <label for="plan-anual"><h3>Plan Anual</h3></label>
+                            </div>
+                            <div class="plan-body">
+                                <p><i class="fas fa-calendar-alt"></i> Acceso ilimitado</p>
+                                <p><i class="fas fa-clock"></i> 6:00 am - 10:00 pm</p>
+                                <p><i class="fas fa-dumbbell"></i> Todas las áreas</p>
+                                <p><i class="fas fa-gift"></i> 1 mes gratis + 4 clases</p>
+                                <div class="plan-price">
+                                    <h2>S/<span>700</span></h2>
+                                    <small>por 12 meses (Ahorra S/260)</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Coach -->
+                <div class="coach-section">
+                    <h2 class="color-titulo">¿Quieres acelerar tus resultados?</h2>
+                    <div class="caja coach-card">
+                        <div class="contenido-op">
+                            <input class="i1" type="checkbox" id="coach-checkbox">
+                            <label for="coach-checkbox" class="coach-label">
+                                <h3><i class="fas fa-chalkboard-teacher"></i> Ares Fit Coach </h3>
+                                <p class="coach-description"> - Entrenador personalizado + plan nutricional</p>
+                                <div class="coach-price">+ S/<span>30/mes</span></div>
+                            </label>
+                        </div>
+                        <div class="coach-benefits">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Plan de entrenamiento personalizado</li>
+                                <li><i class="fas fa-check"></i> Asesoría nutricional básica</li>
+                                <li><i class="fas fa-check"></i> Seguimiento semanal</li>
+                                <li><i class="fas fa-check"></i> Ajustes mensuales según progreso</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detalles de la compra -->
+            <div class="contenido-detalles">
+                <h3 class="color-titulo">Detalles de la compra</h3>
+                <div class="caja2 location-card">
+                    <div class="location-info">
+                        <h4><i class="fas fa-map-marker-alt"></i> Ares Fitness Ate</h4>
+                        <p>ARES FITNESS, Entrada de Huascata, Chaclacayo 15472</p>
+                    </div>
+                    <a href="ubi.html" class="location-link">Ver local en mapa <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="caja2 selected-plan">
+                    <div class="plan-summary">
+                        <h4><i class="fas fa-check-circle"></i> Plan seleccionado:</h4>
+                        <p class="plan-name">Plan Trimestral</p>
+                        <p class="plan-savings">Ahorras S/40 comparado al plan mensual</p>
+                    </div>
+                    <div class="plan-benefits">
+                        <h5><i class="fas fa-star"></i> Beneficios incluidos:</h5>
+                        <ul>
+                            <li>Acceso ilimitado a todas las áreas</li>
+                            <li>Horario extendido de 6:00 am a 10:00 pm</li>
+                            <li>1 clase grupal gratis por mes</li>
+                            <li>Uso de locker (con candado propio)</li>
+                            <li>Acceso a eventos exclusivos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Botón de continuar -->
+                <div class="continue-section">
+                    <button id="btn-continue-register" class="btn-continue">
+                        CONTINUAR REGISTRO <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <p class="secure-text"><i class="fas fa-lock"></i> Pago seguro - 100% protegido</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 AresFitness. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="JS/plan.js"></script>
+</body>
+</html>

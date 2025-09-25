@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ropa</title>
+    <link rel="stylesheet" href="Css/suple.css">
+    <link rel="stylesheet" href="Css/index.css">
+    <link rel="stylesheet" href="Css/HyF.css">
+    <link rel="icon" href="Imagenes/logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos para videos en el banner */
+        .banner-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Asegurar que los videos mantengan el mismo tamaño que las imágenes */
+        .banner-slide video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Para mantener consistencia entre imágenes y videos */
+        .banner-slide img,
+        .banner-slide video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Asegurar que el contenedor del banner tenga una altura definida */
+        .banner-container {
+            height: 400px; /* Ajusta esta altura según necesites */
+            overflow: hidden;
+        }
+
+        .banner-slide {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="Imagenes/logo.png" alt="Logo AresFitness">
+            </a>
+        </div>
+        <nav>
+            <ul> 
+                <!-- Dentro de <nav> <ul>, junto a los otros botones -->    
+                <li><a href="planes.html">PLANES</a></li>
+                <li><a href="ubi.html">UBICACION</a></li>
+                <li><a href="suple.html">SUPLEMENTOS</a></li>
+                <li><a href="ropa.html">ROPA</a></li>  
+                <a href="login.html">
+                    <button class="login-btn" id="loginButton">
+                        <div class="login-btn__icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z"/>
+                            </svg>
+                        </div>
+                        <div class="login-btn__text">Entrar</div>
+                    </button>
+                </a>
+                <a href="carrito.html" class="cart-btn-link">
+                    <button class="cart-btn" id="cartButton">
+                        <div class="cart-btn__icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 18a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2c0-1.11.89-2 2-2M1 2h3.27l.94 2H20a1 1 0 0 1 1 1c0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.8 1.03H8.1l-.9 1.63-.03.12a.25.25 0 0 0 .25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1V2m6 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2c0-1.11.89-2 2-2m9-7l2.78-5H6.14l2.36 5H16z"/>
+                            </svg>
+                            <span class="cart-count">0</span>
+                        </div>
+                    </button>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner principal -->
+    <section>
+        <div class="banner-container" id="banner-container">
+            <!-- Botón para ocultar/mostrar el banner - posicionado como botón de cerrar -->
+            <button id="toggle-banner-btn" class="banner-close-btn">
+                &#10006;
+            </button>
+            <div class="banner-slides">
+                <div class="banner-slide">
+                    <video autoplay muted loop playsinline class="banner-video">
+                        <source src="Imagenes/HombresG.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="banner-slide">
+                    <video autoplay muted loop playsinline class="banner-video">
+                        <source src="Imagenes/mujeresG.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="banner-slide">
+                    <video autoplay muted loop playsinline class="banner-video">
+                        <source src="Imagenes/ropaV.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <button class="banner-arrow left" onclick="prevSlide()">&#10094;</button>
+            <button class="banner-arrow right" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </section>
+    <hr>
+    <!--Banner de patrocinadores-->
+    <section class="sponsor-banner">
+        <div class="sponsor-slides">
+            <img src="Imagenes/pago1.png" alt="Patrocinador 1">
+            <img src="Imagenes/pago2.png" alt="Patrocinador 2">
+            <img src="Imagenes/pago3.png" alt="Patrocinador 3">
+            <img src="Imagenes/pago4.png" alt="Patrocinador 4">
+            <img src="Imagenes/pago5.png" alt="Patrocinador 5">
+            <img src="Imagenes/pago6.png" alt="Patrocinador 6">
+            <img src="Imagenes/pago7.png" alt="Patrocinador 7">
+            <img src="Imagenes/pago8.png" alt="Patrocinador 8">
+            <img src="Imagenes/pago9.png" alt="Patrocinador 9">
+            <img src="Imagenes/pago10.png" alt="Patrocinador 10">
+            <img src="Imagenes/pago11.png" alt="Patrocinador 11">
+
+            <img src="Imagenes/pago1.png" alt="Patrocinador 1">
+            <img src="Imagenes/pago2.png" alt="Patrocinador 2">
+            <img src="Imagenes/pago3.png" alt="Patrocinador 3">
+            <img src="Imagenes/pago4.png" alt="Patrocinador 4">
+            <img src="Imagenes/pago5.png" alt="Patrocinador 5">
+            <img src="Imagenes/pago6.png" alt="Patrocinador 6">
+            <img src="Imagenes/pago7.png" alt="Patrocinador 7">
+            <img src="Imagenes/pago8.png" alt="Patrocinador 8">
+            <img src="Imagenes/pago9.png" alt="Patrocinador 9">
+            <img src="Imagenes/pago10.png" alt="Patrocinador 10">
+            <img src="Imagenes/pago11.png" alt="Patrocinador 11">
+
+            <img src="Imagenes/pago1.png" alt="Patrocinador 1">
+            <img src="Imagenes/pago2.png" alt="Patrocinador 2">
+            <img src="Imagenes/pago3.png" alt="Patrocinador 3">
+            <img src="Imagenes/pago4.png" alt="Patrocinador 4">
+            <img src="Imagenes/pago5.png" alt="Patrocinador 5">
+            <img src="Imagenes/pago6.png" alt="Patrocinador 6">
+            <img src="Imagenes/pago7.png" alt="Patrocinador 7">
+            <img src="Imagenes/pago8.png" alt="Patrocinador 8">
+            <img src="Imagenes/pago9.png" alt="Patrocinador 9">
+            <img src="Imagenes/pago10.png" alt="Patrocinador 10">
+            <img src="Imagenes/pago11.png" alt="Patrocinador 11">
+
+            <img src="Imagenes/pago1.png" alt="Patrocinador 1">
+            <img src="Imagenes/pago2.png" alt="Patrocinador 2">
+            <img src="Imagenes/pago3.png" alt="Patrocinador 3">
+            <img src="Imagenes/pago4.png" alt="Patrocinador 4">
+            <img src="Imagenes/pago5.png" alt="Patrocinador 5">
+            <img src="Imagenes/pago6.png" alt="Patrocinador 6">
+            <img src="Imagenes/pago7.png" alt="Patrocinador 7">
+            <img src="Imagenes/pago8.png" alt="Patrocinador 8">
+            <img src="Imagenes/pago9.png" alt="Patrocinador 9">
+            <img src="Imagenes/pago10.png" alt="Patrocinador 10">
+            <img src="Imagenes/pago11.png" alt="Patrocinador 11">
+        </div>
+    </section>
+    <hr>
+
+    
+    <!--Sección de catalogo-->
+    <section class="product-sections" style="display: flex; align-items: flex-start; min-height: 100vh;">
+        <!-- Barra lateral de filtros -->
+        <aside class="filters-sidebar enhanced-sidebar">
+            <div class="filters-container">
+                <h3>Filtros</h3>
+
+                <!-- Filtro por Marca -->
+                <div class="filter-group">
+                    <button class="filter-toggle" onclick="toggleFilterSection('brand')">
+                        <span>Marca</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="filter-content" id="brand">
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="ares-fitness" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>Ares Fitness</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="nike" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>Nike</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="adidas" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>Adidas</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="gymshark" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>Gymshark</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="under-armour" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>Under Armour</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Filtro por Género -->
+                <div class="filter-group">
+                    <button class="filter-toggle" onclick="toggleFilterSection('gender')">
+                        <span>Género</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="filter-content" id="gender">
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="hombre" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>Hombre</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="mujer" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>Mujer</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="unisex" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>Unisex</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Filtro por Talla -->
+                <div class="filter-group">
+                    <button class="filter-toggle" onclick="toggleFilterSection('size')">
+                        <span>Talla</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="filter-content" id="size">
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="xs" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>XS</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="s" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>S</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="m" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>M</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="l" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>L</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="xl" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>XL</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Filtro por Tipo -->
+                <div class="filter-group">
+                    <button class="filter-toggle" onclick="toggleFilterSection('type')">
+                        <span>Tipo</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="filter-content" id="type">
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="polos" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>Polos</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="shorts" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>Shorts</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="poleras" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>Poleras</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="leggins" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>Leggins</span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="accesorios" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            <span>Accesorios</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Botón para limpiar filtros -->
+                <div class="filter-actions">
+                    <button class="clear-filters-btn" onclick="clearAllFilters()">
+                        Limpiar Filtros
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Contenido principal -->
+        <div class="main-content">
+            <div class="section-content">
+                <!-- Sección de buscador reorganizada -->
+                <div class="search-section-reorganized" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 20px;">
+                    <!-- Buscador a la izquierda -->
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <h1 style="margin: 0; font-size: 2em; color: #ffffff;">Buscador:</h1>
+                        <div class="search-container" style="margin: 0;">
+                            <input type="search" class="search-bar" 
+                                   onkeyup="buscarProductos(this.value, 'productos-slider')">
+                            <img src="Imagenes/search.png" alt="Buscar" class="search-icon">
+                        </div>
+                    </div>
+                    <!-- Botones a la derecha -->
+                    <div style="display: flex; gap: 10px;">
+                        <button class="suplemento-cat-btn" id="btn-hombres" onclick="toggleFiltro('hombres', this)">Hombres</button>
+                        <button class="suplemento-cat-btn" id="btn-mujeres" onclick="toggleFiltro('mujeres', this)">Mujeres</button>
+                        <button class="suplemento-cat-btn" id="btn-accesorios" onclick="toggleFiltro('accesorios', this)">Accesorios</button>
+                    </div>
+                </div>
+    <!--Todos los productos-->
+    <section class="productos-section">
+        <div class="suplementos-slider-container">
+            <div class="suplementos-slider" id="productos-slider">
+                <!-- POLOS HOMBRES -->
+                <div class="product-card polos hombre hombres">
+                    <img src="Imagenes/polo basico.png" alt="Polo Performance" class="suplemento-img">
+                    <h4>Polo Performance</h4>
+                    <p><strong>S/ 34.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas S, M, L, XL</button>
+                        <button class="category-btn">Transpirable</button>
+                    </div>
+                    <p>Polo deportivo. Tela transpirable y de secado rápido.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card polos hombre hombres">
+                    <img src="Imagenes/paloMangaC.png" alt="Polo Clásico" class="suplemento-img">
+                    <h4>Polo Clásico</h4>
+                    <p><strong>S/ 29.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas S, M, L, XL</button>
+                        <button class="category-btn">Manga Corta</button>
+                    </div>
+                    <p>Polo de manga corta. Diseño clásico para entrenamiento.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card polos hombre hombres">
+                    <img src="https://gymratswear.com/cdn/shop/files/BLACK-Photoroom_2_cfef010f-bd0f-403a-82ae-ee2ffa60f28b.png?v=1735435603&width=640" alt="Polo Active" class="suplemento-img">
+                    <h4>Polo Active</h4>
+                    <p><strong>S/ 39.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas S, M, L, XL</button>
+                        <button class="category-btn">Elástico</button>
+                    </div>
+                    <p>Polo para entrenamiento intenso. Material elástico y resistente.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <!-- SHORTS HOMBRES -->
+                <div class="product-card shorts hombre hombres">
+                    <img src="https://cdn.shopify.com/s/files/1/0156/6146/files/HeritageRawEdge5ShortsGSOnyxGreyA2C6V-GB7N-0043_a32860e8-3a63-4fa4-a157-22476d7d2751_1920x.jpg?v=1746089230" alt="Short Training" class="suplemento-img">
+                    <h4>Short Training</h4>
+                    <p><strong>S/ 24.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas S, M, L</button>
+                        <button class="category-btn">Bolsillos Laterales</button>
+                    </div>
+                    <p>Short para entrenamiento. Con bolsillos laterales.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card shorts hombre hombres">
+                    <img src="https://cdn.shopify.com/s/files/1/0156/6146/files/SportsShortIteration2GSHeavyBlue-GSIronBlueA2C2U-UCY1-1290-0239_1920x.jpg?v=1744978693" alt="Short Running" class="suplemento-img">
+                    <h4>Short Running</h4>
+                    <p><strong>S/ 27.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas S, M, L, XL</button>
+                        <button class="category-btn">Transpirable</button>
+                    </div>
+                    <p>Short para running. Ligero y transpirable.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card shorts hombre hombres">
+                    <img src="https://cdn.shopify.com/s/files/1/0156/6146/files/GFXLifting4MultiGraphicShortRDEGSBlackA2B1G-BB2J-0570_623bfd02-30a9-4958-8aeb-dfe54078796a_1920x.jpg?v=1746089230" alt="Short Essential" class="suplemento-img">
+                    <h4>Short Essential</h4>
+                    <p><strong>S/ 22.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas S, M, L</button>
+                        <button class="category-btn">Corte Clásico</button>
+                    </div>
+                    <p>Short básico para gimnasio. Corte clásico.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <!-- POLERAS HOMBRES -->
+                <div class="product-card poleras hombre hombres">
+                    <img src="https://gymratswear.com/cdn/shop/files/HOODIEBLACKFRONTAL_ffbb7d46-7ef0-4095-9ba2-6181b419a717.png?v=1704485606&width=640" alt="Polera Workout" class="suplemento-img">
+                    <h4>Polera Workout</h4>
+                    <p><strong>S/ 44.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas S, M, L, XL</button>
+                        <button class="category-btn">Con Capucha</button>
+                    </div>
+                    <p>Polera deportiva. Ideal para entrenamientos.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card poleras hombre hombres">
+                    <img src="https://gymratswear.com/cdn/shop/files/HOODIECREMAFRONTAL_b6b3a6ce-9c45-4fce-bcb2-5162753686d3.png?v=1704486181&width=640" alt="Polera Training" class="suplemento-img">
+                    <h4>Polera Training</h4>
+                    <p><strong>S/ 49.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas M, L, XL</button>
+                        <button class="category-btn">Material Premium</button>
+                    </div>
+                    <p>Polera para entrenamiento. Material premium.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card poleras hombre hombres">
+                    <img src="https://cdn.shopify.com/s/files/1/0156/6146/files/A_PowerOriginalsHoodieCharcoalCoreMarlA2C9H-GBBB-1262_391700d8-8ec4-4ddb-9d76-a3ce4d42eb27_1920x.jpg?v=1743417072" alt="Polera Essential" class="suplemento-img">
+                    <h4>Polera Essential</h4>
+                    <p><strong>S/ 39.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas S, M, L</button>
+                        <button class="category-btn">Minimalista</button>
+                    </div>
+                    <p>Polera básica. Diseño minimalista y cómodo.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <!-- POLOS MUJERES -->
+                <div class="product-card polos mujer mujeres">
+                    <img src="https://home.ripley.com.pe/Attachment/WOP_5/2020336031071/2020336031071_2.jpg" alt="Polo Sport" class="suplemento-img">
+                    <h4>Polo Sport</h4>
+                    <p><strong>S/ 32.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas XS, S, M</button>
+                        <button class="category-btn">Transpirable</button>
+                    </div>
+                    <p>Polo deportivo para mujer. Tela transpirable.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card polos mujer mujeres">
+                    <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/61ba686e6ada4009b43f690f3bf89881_9366/Polo_Corto_Essentials_Verde_JD5338_01_laydown.jpg" alt="Polo Fit" class="suplemento-img">
+                    <h4>Polo Fit</h4>
+                    <p><strong>S/ 29.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas XS, S, M, L</button>
+                        <button class="category-btn">Ajustado</button>
+                    </div>
+                    <p>Polo ajustado. Ideal para entrenamiento.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card polos mujer mujeres">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_2X_817152-MPE77849157166_072024-F-polo-oversized-gymshark-mujer-original.webp" alt="Polo Casual" class="suplemento-img">
+                    <h4>Polo Casual</h4>
+                    <p><strong>S/ 27.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas S, M, L</button>
+                        <button class="category-btn">Oversize</button>
+                    </div>
+                    <p>Polo casual oversize. Estilo relajado.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <!-- SHORTS MUJERES -->
+                <div class="product-card shorts mujer mujeres">
+                    <img src="https://cdn.shopify.com/s/files/1/1367/5207/files/SUN_C_bigger_Athlete_6_1920x.jpg?v=1739125238" alt="Short Training" class="suplemento-img">
+                    <h4>Short Training</h4>
+                    <p><strong>S/ 26.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas XS, S, M</button>
+                        <button class="category-btn">Corte Alto</button>
+                    </div>
+                    <p>Short para entrenamiento. Corte alto.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card shorts mujer mujeres">
+                    <img src="https://cdn.shopify.com/s/files/1/1367/5207/files/Adapt-x-whitney_Static_eComm_PDP_1692x2018_09_1e1a8e33-d2ea-4aff-9579-36ea4bc59773_1920x.jpg?v=1740661798" alt="Short Yoga" class="suplemento-img">
+                    <h4>Short Yoga</h4>
+                    <p><strong>S/ 24.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas S, M, L</button>
+                        <button class="category-btn">Elástico</button>
+                    </div>
+                    <p>Short para yoga. Material elástico.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card shorts mujer mujeres">
+                    <img src="https://cdn.shopify.com/s/files/1/0156/6146/files/StitchFeatureWovenPantGSBlackB6A9S-BB2J841_d8d7d834-dc0d-44d5-85cd-b08409fa9e69_1920x.jpg?v=1705568074" alt="Short Running" class="suplemento-img">
+                    <h4>Short Running</h4>
+                    <p><strong>S/ 28.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas XS, S, M, L</button>
+                        <button class="category-btn">Transpirable</button>
+                    </div>
+                    <p>Short para running. Transpirable.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <!-- POLERAS MUJERES -->
+                <div class="product-card poleras mujer mujeres">
+                    <img src="https://cdn.shopify.com/s/files/1/0156/6146/files/GFXBULKINGSEASONBRUSHEDHOODIEGSBlackB1C9K-BB2J-0769_e3e7debd-c54f-4cd9-b6a0-40ed97e206d8_1920x.jpg?v=1737639236" alt="Polera Workout" class="suplemento-img">
+                    <h4>Polera Workout</h4>
+                    <p><strong>S/ 42.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas S, M, L</button>
+                        <button class="category-btn">Deportiva</button>
+                    </div>
+                    <p>Polera deportiva. Ideal para entrenamientos.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card poleras mujer mujeres">
+                    <img src="https://cdn.shopify.com/s/files/1/0156/6146/files/GFXBULKINGSEASONBRUSHEDHOODIEGSLightGreyMarlB1C9K-GCHR-0799_10c5c5b6-acf4-4e70-9e06-2bab996dc556_1920x.jpg?v=1733408261" alt="Polera Training" class="suplemento-img">
+                    <h4>Polera Training</h4>
+                    <p><strong>S/ 47.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas XS, S, M</button>
+                        <button class="category-btn">Premium</button>
+                    </div>
+                    <p>Polera para entrenamiento. Material premium.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card poleras mujer mujeres">
+                    <img src="https://home.ripley.com.pe/Attachment/WOP_5/2020324359668/2020324359668_2.jpg" alt="Polera Essential" class="suplemento-img">
+                    <h4>Polera Essential</h4>
+                    <p><strong>S/ 37.99</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas S, M, L</button>
+                        <button class="category-btn">Minimalista</button>
+                    </div>
+                    <p>Polera básica. Diseño minimalista y cómodo.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <!-- LEGGINS MUJERES -->
+                <div class="product-card leggins mujer mujeres">
+                    <img src="Imagenes/LegginsMujer.png" alt="Leggins Pro Mujer" class="suplemento-img">
+                    <h4>Leggins Pro Mujer</h4>
+                    <p><strong>S/ 120.00</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas S, M, L</button>
+                        <button class="category-btn">Cintura Alta</button>
+                    </div>
+                    <p>Leggins de alto rendimiento, cintura alta. Tecnología anti-transpirante.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <!-- ACCESORIOS -->
+                <div class="product-card accesorios unisex">
+                    <img src="Imagenes/Cinturón.png" alt="Cinturón de Entrenamiento" class="suplemento-img">
+                    <h4>Cinturón de Entrenamiento</h4>
+                    <p><strong>S/ 99.00</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Tallas M, L, XL</button>
+                        <button class="category-btn">Acolchado</button>
+                    </div>
+                    <p>Cinturón lumbar acolchado para levantamiento de pesas. Hebilla metálica ajustable.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card accesorios unisex">
+                    <img src="Imagenes/Mochila.png" alt="Mochila Gym Ares" class="suplemento-img">
+                    <h4>Mochila Gym Ares</h4>
+                    <p><strong>S/ 149.00</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">28 Litros</button>
+                        <button class="category-btn">Resistente al Agua</button>
+                    </div>
+                    <p>Mochila resistente al agua con compartimento para calzado.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card accesorios unisex">
+                    <img src="Imagenes/CUERDA.png" alt="Cuerda para Saltar" class="suplemento-img">
+                    <h4>Cuerda para Saltar</h4>
+                    <p><strong>S/ 11.00</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Ajustable</button>
+                        <button class="category-btn">Cardio</button>
+                    </div>
+                    <p>Ideal para potenciar tus entrenamientos de cardio.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card accesorios unisex">
+                    <img src="Imagenes/Guantes Deportivos.png" alt="Guantes Deportivos" class="suplemento-img">
+                    <h4>Guantes Deportivos</h4>
+                    <p><strong>S/ 39.90</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Antideslizante</button>
+                        <button class="category-btn">Con Muñequera</button>
+                    </div>
+                    <p>Guantes con palma antideslizante y muñequera para mayor protección.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card accesorios unisex">
+                    <img src="Imagenes/BANDAS.png" alt="Bandas Elásticas de Resistencia" class="suplemento-img">
+                    <h4>Bandas Elásticas de Resistencia</h4>
+                    <p><strong>S/ 38.00</strong></p>
+                    <div class="product-categories">
+                        <button class="category-btn">Ares Fitness</button>
+                        <button class="category-btn">Múltiples Colores</button>
+                        <button class="category-btn">Resistencia Variable</button>
+                    </div>
+                    <p>Prepárate para elevar tu entrenamiento al siguiente nivel con nuestras bandas elásticas de resistencia.</p>
+                    <div class="product-buttons">
+                        <button class="add-to-cart">Agregar al Carro</button>
+                        <button class="buy-now">Comprar Ahora</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+    
+<footer>
+    <div id="LOGO">
+        <a href="index.html" target="_blank"><img id="LOGO" src="Imagenes/logo.png" alt="Logo Ares Fitness"><br><br></a>
+    </div>
+
+    <div class="footer_container">
+
+        <!-- Sección izquierda: Redes y contacto -->
+        <div class="redes-sociales">
+            <strong>Redes Sociales:</strong><br><br>
+            <a href="#" target="_blank"><img src="Imagenes/FB.png" alt="Facebook" class="icono-red"></a>
+            <a href="https://www.instagram.com/aresfitness.peru/" target="_blank"><img src="Imagenes/Insta.png" alt="Instagram" class="icono-red"></a>
+            <a href="#" target="_blank"><img src="Imagenes/Tiktok.png" alt="Tiktok" class="icono-red"></a>
+            <a href="#" target="_blank"><img src="Imagenes/X.png" alt="X" class="icono-red"></a><br>
+            <br><br>
+            <strong>CONTACTANOS:</strong><br><br>
+            <a href="#" target="_blank">
+                <img src="Imagenes/WhatsApp.png" alt="WhatsApp" style="width: 20px; vertical-align: middle;"></a>
+            <br><br>
+            <a href="#" target="_blank">
+                <img src="Imagenes/Gmail.png" alt="Correo" style="width: 20px; vertical-align: middle;"></a> 
+
+        </div>
+        <!-- Sección central: Enlaces -->
+        <div class="footer-section">
+            <a href="#">TERMINOS Y CONDICIONES</a><br><br><br>
+            <a href="#">POLITICAS Y PRIVACIDAD</a><br><br><br>
+            <a href="#">QUEJAS Y RECLAMOS</a>
+        </div>
+
+        <!-- Sección derecha: soporte y libro -->
+        <div class="footer-section" style="text-align: center;">
+            <a href="#">SOPORTE TECNICO</a><br><br><br>
+            <a href="index.html">ARES FITNESS</a><br><br><br><br>
+            <span style="color: #00ccff; font-weight: bold;"></span><br>
+            <img src="Imagenes/LibroR.png" alt="Libro de Reclamaciones" style="width: 150px;">
+        </div>
+    </div>
+
+    <p>&copy; 2025 AresFitness. Todos los derechos reservados.</p>
+</footer>
+
+    <!-- Vincula el archivo JS externo al final del body -->
+    <script src="JS/carrito.js"></script>
+    <script src="JS/suple.js"></script>
+    <script src="JS/index.js"></script>
+</body>
+</html>

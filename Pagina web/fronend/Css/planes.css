@@ -1,0 +1,365 @@
+/* ===== VARIABLES Y ESTILOS BASE ===== */
+:root {
+  --color-primary: #FFD600;
+  --color-primary-hover: #FF8C00;
+  --color-dark: #0f0e0d;
+  --color-text: #7f7676;
+  --color-text-light: #ffffff;
+  --shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
+    100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes borderAnimation {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+
+/* Estilos para la sección del banner con efecto parallax */
+.gym-section {
+    width: 100%;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    position: relative;
+    overflow: hidden;
+}
+
+.gym-banner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transform: scale(1.1); /* Efecto inicial de zoom */
+    transition: transform 0.5s ease-out;
+    will-change: transform; /* Optimización para el navegador */
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.banner-content h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner-content p {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Efectos cuando la página está cargada */
+.loaded .banner-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto parallax al hacer scroll */
+.parallax-effect .banner-image {
+    transform: scale(1);
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .banner-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .banner-content p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-content h1 {
+        font-size: 2rem;
+    }
+    
+    .banner-content p {
+        font-size: 1rem;
+    }
+}
+/* ===== MAIN CONTENT ===== */
+.gym-banner {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.gym-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 800px;
+    object-fit: cover;
+}
+
+.planes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.3s forwards;
+}
+
+.plan-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 214, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.plan-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 15px 30px rgba(255, 214, 0, 0.3);
+}
+
+.plan-card h2 {
+    color: var(--color-text-light);
+    font-size: 30px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 1px;
+}
+
+.plan-card p {
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #00ccff;
+    margin: 10px 0;
+}
+
+.discount {
+    color: #4CAF50;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Animaciones escalonadas para cada tarjeta */
+.plan-card:nth-child(1) {
+    animation: slideUp 0.6s ease-out 0.4s forwards;
+}
+.plan-card:nth-child(2) {
+    animation: slideUp 0.6s ease-out 0.6s forwards;
+}
+.plan-card:nth-child(3) {
+    animation: slideUp 0.6s ease-out 0.8s forwards;
+}
+.plan-card:nth-child(4) {
+    animation: slideUp 0.6s ease-out 1.0s forwards;
+}
+.plan-card:nth-child(5) {
+    animation: slideUp 0.6s ease-out 1.2s forwards;
+}
+.plan-card:nth-child(6) {
+    animation: slideUp 0.6s ease-out 1.4s forwards;
+}
+
+/* ===== BOTONES ===== */
+.btn-magic {
+    position: relative;
+    background: var(--color-primary);
+    color: #000;
+    border: none;
+    padding: 14px 40px;
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(255, 214, 0, 0.4);
+    display: inline-block;
+    margin-top: 15px;
+    animation: pulse 2s infinite 2s;
+}
+
+.btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--color-primary-hover), #FF4500);
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease;
+    border-radius: 4px;
+}
+
+.btn-magic::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background: linear-gradient(45deg, var(--color-primary), var(--color-primary-hover), #FF4500, var(--color-primary));
+    background-size: 400%;
+    border-radius: 7px;
+    opacity: 0;
+    transition: 0.5s;
+    animation: borderAnimation 3s linear infinite;
+}
+
+.btn-magic:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.6);
+    color: #fff;
+}
+
+.btn-magic:hover .hover-effect {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.btn-magic:hover::before {
+    opacity: 1;
+}
+
+.btn-magic:active {
+    transform: translateY(-1px);
+}
+/* Efecto de onda para botones */
+.button-wave {
+    position: absolute;
+    background: rgba(255, 214, 0, 0.4);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: buttonWave 0.6s ease-out;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes buttonWave {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Optimización para dispositivos móviles */
+@media (max-width: 768px) {
+    .gym-section {
+        height: var(--banner-height, 80vh);
+    }
+    
+    .parallax-effect .banner-image {
+        transform: scale(1.03) !important;
+    }
+}
+
+/* Mejoras de rendimiento */
+[data-aos] {
+    transition-duration: 0.6s;
+}
+
+/* Estilos para cuando JS está deshabilitado */
+.no-js .banner-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.no-js .plan-card {
+    opacity: 1;
+    transform: translateY(0) rotateY(0);
+}
