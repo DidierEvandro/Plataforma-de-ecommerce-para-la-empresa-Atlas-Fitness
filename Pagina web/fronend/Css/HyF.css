@@ -93,7 +93,7 @@ nav ul li:nth-child(5) { animation-delay: 0.7s; }
 
 nav ul li a {
     text-decoration: none;
-    color: #ffd500 !important;
+    color: #ffffff !important;
     font-weight: bold;
     font-family: 'CodecProBold', sans-serif;
     font-size: 16px;
@@ -223,9 +223,9 @@ nav ul li a:hover::after {
 
 /* ========== LOGIN BUTTON ========== */
 .login-btn {
-    --btn-color: #ffd700;
-    --text-color: #000000;
-    --hover-color: rgb(255, 255, 255);
+    --btn-color: #0b219e;
+    --text-color: #ffffff;
+    --hover-color: rgba(255, 255, 255, 0);
     
     display: flex;
     align-items: center;
